@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">血社火文化</div>
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="血社火文化标识">
+                <span>血社火文化</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="data.html">数据</a></li>
@@ -22,74 +24,116 @@
         </div>
     </nav>
 
-    <!-- 内容区域 -->
-    <div class="container">
-        <div class="page-header">
-            <h1>文创产品</h1>
-            <p>传统与现代的完美结合</p>
-        </div>
+    <main class="container">
+        <header class="page-header compact">
+            <p class="eyebrow">文创商店</p>
+            <h1>让血社火走进日常</h1>
+            <p>参考社火脸谱工艺杯、马勺脸谱、冰箱贴、地方食品联名包装等非遗文创方向，结合现有设计素材形成一组可展示的产品方案。</p>
+        </header>
 
-        <div class="card">
-            <h2>文创产品展示</h2>
-            <div class="culture-grid">
-                <div class="culture-item">
-                    <div class="culture-image"><img src="images/文创-帆布袋.png" width="290" height="210" /></div>
-                    <div class="culture-info">
-                        <h3>「血气方刚」帆布包</h3>
-                        <p>把陕西非遗血社火的“飒”裹进日常——萌系脸谱+醒目“血气方刚”字样，红白撞色自带复古潮感，装得下书本杂物，更装得下年轻劲儿~</p>
-                    </div>
-                </div>
-                <div class="culture-item">
-                    <div class="culture-image"><img src="images/文创-饮料.png" width="290" height="210" /></div>
-                    <div class="culture-info">
-                        <h3>血社火·沙棘饮</h3>
-                        <p>非遗IP撞上西北风味：瓶身印着血社火萌版脸谱，瓶里是酸甜沙棘果饮，一口喝到陕北风土，把“传统味儿”喝进生活里~</p>
-                    </div>
-                </div>
-                <div class="culture-item">
-                    <div class="culture-image"><img src="images/文创-扇子.png" width="290" height="210" /></div>
-                    <div class="culture-info">
-                        <h3>血社火主题折扇+手办</h3>
-                        <p>把血社火的“阵仗”握在手里：折扇绘着社火表演名场面，搭配同款脸谱手办，国风氛围感拉满，摆着是装饰，扇着是腔调~</p>
-                    </div>
-                </div>
+        <section class="toolbar" aria-label="产品筛选">
+            <button class="chip active" data-filter="all">全部</button>
+            <button class="chip" data-filter="daily">日用</button>
+            <button class="chip" data-filter="gift">礼赠</button>
+            <button class="chip" data-filter="collectible">收藏</button>
+            <button class="chip" data-filter="food">风味</button>
+        </section>
 
-                <div class="culture-item">
-                    <div class="culture-image"><img src="images/文创-盒子.png" width="290" height="210" /></div>
-                    <div class="culture-info">
-                        <h3>血社火文创糕点盒</h3>
-                        <p>非遗IP“拿捏”中式点心：简约纸盒印着血社火Q版形象，盒里是层层酥香的糕点，吃的是甜香，拎的是非遗文化的巧思~</p>
+        <section class="product-grid" id="product-grid">
+            <article class="product-card" data-category="daily">
+                <img src="images/文创-帆布袋.png" alt="血气方刚帆布袋">
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>日用</span>
+                        <strong>¥69</strong>
                     </div>
+                    <h2>「血气方刚」帆布袋</h2>
+                    <p>把血社火脸谱的锋利线条压进通勤场景，红白撞色醒目，适合装书、本子和随身杂物。</p>
+                    <button class="btn add-favorite" data-name="「血气方刚」帆布袋">加入收藏</button>
                 </div>
-                <div class="culture-item">
-                    <div class="culture-image"><img src="images/文创-冰箱贴.png" width="290" height="210" /></div>
-                    <div class="culture-info">
-                        <h3>血社火冰箱贴</h3>
-                        <p>让厨房也沾点“非遗元气”：立体脸谱冰箱贴带着社火铃铛元素，吸在冰箱上是装饰，拿下来是能把玩的小趣味，把传统萌进烟火气里~</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </article>
 
-        <div class="card">
-            <h2>文创开发计划</h2>
-            <div class="article">
-                <h3>第一阶段：基础产品开发</h3>
-                <p>开发基础文创产品，包括印刷品、小件工艺品等。</p>
-                <p><small>预计完成时间：2026年3月</small></p>
+            <article class="product-card" data-category="food">
+                <img src="images/文创-饮料.png" alt="血社火沙棘饮">
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>风味</span>
+                        <strong>¥12</strong>
+                    </div>
+                    <h2>血社火·沙棘饮</h2>
+                    <p>以西北沙棘风味搭配脸谱瓶身，把地方味觉与非遗视觉放在同一只瓶子里。</p>
+                    <button class="btn add-favorite" data-name="血社火·沙棘饮">加入收藏</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="collectible">
+                <img src="images/文创-扇子.png" alt="血社火主题折扇和手办">
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>收藏</span>
+                        <strong>¥89</strong>
+                    </div>
+                    <h2>主题折扇与脸谱手办</h2>
+                    <p>折扇呈现社火队列表演氛围，搭配同款脸谱手办，适合桌面陈列和活动伴手礼。</p>
+                    <button class="btn add-favorite" data-name="主题折扇与脸谱手办">加入收藏</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="gift food">
+                <img src="images/文创-盒子.png" alt="血社火文创糕点盒">
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>礼赠</span>
+                        <strong>¥128</strong>
+                    </div>
+                    <h2>血社火文创糕点礼盒</h2>
+                    <p>简洁纸盒包裹中式糕点，脸谱插画让伴手礼更有地方识别度。</p>
+                    <button class="btn add-favorite" data-name="血社火文创糕点礼盒">加入收藏</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="collectible gift">
+                <img src="images/文创-冰箱贴.png" alt="血社火脸谱冰箱贴">
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>收藏</span>
+                        <strong>¥39</strong>
+                    </div>
+                    <h2>血社火脸谱冰箱贴</h2>
+                    <p>立体脸谱与铃铛元素组合，小体量、高识别度，适合旅游纪念和社群传播。</p>
+                    <button class="btn add-favorite" data-name="血社火脸谱冰箱贴">加入收藏</button>
+                </div>
+            </article>
+
+            <article class="product-card concept" data-category="daily gift">
+                <div class="concept-art">杯</div>
+                <div class="product-info">
+                    <div class="product-meta">
+                        <span>概念款</span>
+                        <strong>¥99</strong>
+                    </div>
+                    <h2>社火脸谱工艺杯</h2>
+                    <p>借鉴“社火脸谱工艺杯”的成熟文创方向，把脸谱色块用于杯身与礼盒包装，适合会议礼品和景区零售。</p>
+                    <button class="btn add-favorite" data-name="社火脸谱工艺杯">加入收藏</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="roadmap">
+            <div>
+                <p class="eyebrow">开发计划</p>
+                <h2>从展示到销售</h2>
             </div>
-            <div class="article">
-                <h3>第二阶段：数字产品开发</h3>
-                <p>开发AR滤镜、线上展览等数字文创产品。</p>
-                <p><small>预计完成时间：2026年7月</small></p>
-            </div>
-            <div class="article">
-                <h3>第三阶段：品牌建设</h3>
-                <p>建立血社火文创品牌，拓展销售渠道。</p>
-                <p><small>预计完成时间：2026年12月</small></p>
-            </div>
-        </div>
-    </div>
+            <ol>
+                <li><strong>基础款上架：</strong>帆布袋、冰箱贴、饮品、糕点礼盒完成产品卡片与收藏功能。</li>
+                <li><strong>联名扩展：</strong>结合马勺脸谱、皮影、刺绣布艺等陕西民间工艺开发礼赠系列。</li>
+                <li><strong>数字体验：</strong>增加 AR 试戴脸谱、线上展厅和活动预约表单。</li>
+            </ol>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/js/auth.js"></script>
 </body>
 
 </html>

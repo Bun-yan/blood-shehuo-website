@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">血社火文化</div>
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="血社火文化标识">
+                <span>血社火文化</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="data.html" class="active">数据</a></li>
@@ -22,79 +24,60 @@
         </div>
     </nav>
 
-    <!-- 内容区域 -->
-    <div class="container">
-        <div class="page-header">
-            <h1>数据统计</h1>
-            <p>基于问卷调查和实地调研的数据分析</p>
-        </div>
+    <main class="container">
+        <header class="page-header compact">
+            <p class="eyebrow">调研看板</p>
+            <h1>基于问卷与实地调研的数据统计</h1>
+            <p>用可视化指标呈现公众认知、保护意愿、艺人年龄结构和地域分布，为传播与文创开发提供依据。</p>
+        </header>
 
+        <section class="data-grid">
+            <article class="data-card">
+                <span class="stat-number">32%</span>
+                <h2>公众认知度</h2>
+                <p>受访者表示了解血社火文化。</p>
+            </article>
+            <article class="data-card">
+                <span class="stat-number">87%</span>
+                <h2>保护支持度</h2>
+                <p>受访者认为需要加强保护与传播。</p>
+            </article>
+            <article class="data-card">
+                <span class="stat-number">15%</span>
+                <h2>青年参与度</h2>
+                <p>35 岁以下传承和参与者比例。</p>
+            </article>
+            <article class="data-card">
+                <span class="stat-number">156</span>
+                <h2>登记艺人</h2>
+                <p>登记在册的血社火相关艺人数量。</p>
+            </article>
+        </section>
 
-
-        <div class="card">
-            <h2>问卷调查结果</h2>
-            <div class="data-grid">
-                <div class="data-card">
-                    <h3>公众认知度</h3>
-                    <span class="stat-number">32%</span>
-                    <p>受访者表示了解血社火文化</p>
-                </div>
-                <div class="data-card">
-                    <h3>保护支持度</h3>
-                    <span class="stat-number">87%</span>
-                    <p>受访者认为需要加强保护</p>
-                </div>
-                <div class="data-card">
-                    <h3>年轻人参与度</h3>
-                    <span class="stat-number">15%</span>
-                    <p>35岁以下传承人比例</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>艺人统计</h2>
-            <div class="data-grid">
-                <div class="data-card">
-                    <h3>总艺人数量</h3>
-                    <span class="stat-number">156</span>
-                    <p>登记在册的血社火艺人</p>
-                </div>
-                <div class="data-card">
-                    <h3>平均年龄</h3>
-                    <span class="stat-number">58</span>
-                    <p>岁</p>
-                </div>
-                <div class="data-card">
-                    <h3>平均从业年限</h3>
-                    <span class="stat-number">26</span>
-                    <p>年</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>详细问卷星调查结果：<a href="https://www.wjx.cn/wxloj/datafullscreen.aspx?activity=338496505"
-                    target=" _blank">点击查看</a></h2>
-
-        </div>
-
-        <div class="card">
+        <section class="profile-section">
             <h2>地区分布</h2>
-            <div class="article">
-                <h3>主要分布地区</h3>
-                <p>陕西省：宝鸡市、咸阳市、渭南市</p>
-                <p>甘肃省：天水市、平凉市</p>
-                <p>其他地区：零星分布</p>
+            <div class="article-list compact-list">
+                <div class="article-row static">
+                    <span>陕西省</span>
+                    <strong>宝鸡市、咸阳市、渭南市等地</strong>
+                </div>
+                <div class="article-row static">
+                    <span>甘肃省</span>
+                    <strong>天水市、平凉市等地</strong>
+                </div>
+                <div class="article-row static">
+                    <span>年度表演</span>
+                    <strong>春节与庙会期间最集中，单场地平均 5-20 场</strong>
+                </div>
             </div>
-            <div class="article">
-                <h3>年度表演场次统计</h3>
-                <p>春节期间：平均每地15-20场</p>
-                <p>庙会期间：平均每地8-12场</p>
-                <p>其他时间：平均每地3-5场</p>
-            </div>
-        </div>
-    </div>
+        </section>
+
+        <section class="profile-section">
+            <h2>详细问卷结果</h2>
+            <p>问卷星调研数据可作为后续传播策略、产品定价和受众画像优化的依据。</p>
+            <a class="btn secondary" href="https://www.wjx.cn/wxloj/datafullscreen.aspx?activity=338496505" target="_blank" rel="noreferrer">查看问卷数据</a>
+        </section>
+    </main>
 </body>
 
 </html>
