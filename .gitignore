@@ -1,4 +1,0 @@
-__pycache__/
-*.py[cod]
-flask-server.log
-*.db-journal
