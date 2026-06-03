@@ -27,11 +27,22 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Prepare static site
+        shell: bash
+        run: |
+          mkdir public
+          cp *.html public/
+          cp .nojekyll public/
+          cp _redirects public/ 2>/dev/null || true
+          cp -r assets images public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public
 
       - name: Deploy to GitHub Pages
         id: deployment
