@@ -7,3 +7,9 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true
+      - key: DATABASE_PATH
+        value: /data/users.db
+    disk:
+      name: blood-shehuo-data
+      mountPath: /data
+      sizeGB: 1

@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "blood-shehuo-dev-secret")
 CORS(app, supports_credentials=True)
 
-DB_PATH = os.path.join(app.instance_path, "users.db")
+DB_PATH = os.environ.get("DATABASE_PATH", os.path.join(app.instance_path, "users.db"))
 
 SEED_PRODUCTS = [
     {
@@ -65,7 +65,7 @@ SEED_PRODUCTS = [
 
 
 def get_db():
-    os.makedirs(app.instance_path, exist_ok=True)
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
