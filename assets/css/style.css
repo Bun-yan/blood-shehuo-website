@@ -503,6 +503,41 @@ img {
     margin-top: 18px;
 }
 
+.empty-state {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 24px;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.section-heading.small h2 {
+    margin: 6px 0 8px;
+    font-size: 1.8rem;
+}
+
+.product-editor {
+    margin-top: 34px;
+}
+
+.product-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.product-form .wide {
+    grid-column: span 2;
+}
+
+.product-form .btn {
+    align-self: end;
+    min-height: 44px;
+}
+
 .toast {
     position: fixed;
     right: 22px;
@@ -544,9 +579,14 @@ img {
 
     .feature-grid,
     .product-grid,
+    .product-form,
     .dashboard-grid,
     .data-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-form .wide {
+        grid-column: auto;
     }
 
     .hero {

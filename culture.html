@@ -26,9 +26,9 @@
 
     <main class="container">
         <header class="page-header compact">
-            <p class="eyebrow">文创商店</p>
+            <p class="eyebrow">动态文创商店</p>
             <h1>让血社火走进日常</h1>
-            <p>参考社火脸谱工艺杯、马勺脸谱、冰箱贴、地方食品联名包装等非遗文创方向，结合现有设计素材形成一组可展示的产品方案。</p>
+            <p>本地 Flask 版会从 SQLite 数据库读取产品，新增产品和用户收藏都会保存；公开 GitHub Pages 版会自动降级为静态展示。</p>
         </header>
 
         <section class="toolbar" aria-label="产品筛选">
@@ -40,94 +40,53 @@
         </section>
 
         <section class="product-grid" id="product-grid">
-            <article class="product-card" data-category="daily">
-                <img src="images/文创-帆布袋.png" alt="血气方刚帆布袋">
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>日用</span>
-                        <strong>¥69</strong>
-                    </div>
-                    <h2>「血气方刚」帆布袋</h2>
-                    <p>把血社火脸谱的锋利线条压进通勤场景，红白撞色醒目，适合装书、本子和随身杂物。</p>
-                    <button class="btn add-favorite" data-name="「血气方刚」帆布袋">加入收藏</button>
-                </div>
-            </article>
+            <p class="empty-state">正在加载产品...</p>
+        </section>
 
-            <article class="product-card" data-category="food">
-                <img src="images/文创-饮料.png" alt="血社火沙棘饮">
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>风味</span>
-                        <strong>¥12</strong>
-                    </div>
-                    <h2>血社火·沙棘饮</h2>
-                    <p>以西北沙棘风味搭配脸谱瓶身，把地方味觉与非遗视觉放在同一只瓶子里。</p>
-                    <button class="btn add-favorite" data-name="血社火·沙棘饮">加入收藏</button>
+        <section class="profile-section product-editor">
+            <div class="section-heading small">
+                <p class="eyebrow">动态发布</p>
+                <h2>新增文创产品</h2>
+                <p>填写后会写入本地 SQLite 数据库，并立即出现在上方产品列表里。</p>
+            </div>
+            <form id="product-form" class="product-form">
+                <div class="form-group">
+                    <label for="product-name">产品名称</label>
+                    <input id="product-name" name="name" type="text" placeholder="例如：血社火脸谱钥匙扣" required>
                 </div>
-            </article>
-
-            <article class="product-card" data-category="collectible">
-                <img src="images/文创-扇子.png" alt="血社火主题折扇和手办">
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>收藏</span>
-                        <strong>¥89</strong>
-                    </div>
-                    <h2>主题折扇与脸谱手办</h2>
-                    <p>折扇呈现社火队列表演氛围，搭配同款脸谱手办，适合桌面陈列和活动伴手礼。</p>
-                    <button class="btn add-favorite" data-name="主题折扇与脸谱手办">加入收藏</button>
+                <div class="form-group">
+                    <label for="product-category">分类代码</label>
+                    <input id="product-category" name="category" type="text" placeholder="daily / gift / collectible / food" value="gift" required>
                 </div>
-            </article>
-
-            <article class="product-card" data-category="gift food">
-                <img src="images/文创-盒子.png" alt="血社火文创糕点盒">
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>礼赠</span>
-                        <strong>¥128</strong>
-                    </div>
-                    <h2>血社火文创糕点礼盒</h2>
-                    <p>简洁纸盒包裹中式糕点，脸谱插画让伴手礼更有地方识别度。</p>
-                    <button class="btn add-favorite" data-name="血社火文创糕点礼盒">加入收藏</button>
+                <div class="form-group">
+                    <label for="product-category-label">分类名称</label>
+                    <input id="product-category-label" name="category_label" type="text" placeholder="例如：礼赠" value="礼赠" required>
                 </div>
-            </article>
-
-            <article class="product-card" data-category="collectible gift">
-                <img src="images/文创-冰箱贴.png" alt="血社火脸谱冰箱贴">
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>收藏</span>
-                        <strong>¥39</strong>
-                    </div>
-                    <h2>血社火脸谱冰箱贴</h2>
-                    <p>立体脸谱与铃铛元素组合，小体量、高识别度，适合旅游纪念和社群传播。</p>
-                    <button class="btn add-favorite" data-name="血社火脸谱冰箱贴">加入收藏</button>
+                <div class="form-group">
+                    <label for="product-price">价格</label>
+                    <input id="product-price" name="price" type="number" min="0" step="1" placeholder="例如：49" required>
                 </div>
-            </article>
-
-            <article class="product-card concept" data-category="daily gift">
-                <div class="concept-art">杯</div>
-                <div class="product-info">
-                    <div class="product-meta">
-                        <span>概念款</span>
-                        <strong>¥99</strong>
-                    </div>
-                    <h2>社火脸谱工艺杯</h2>
-                    <p>借鉴“社火脸谱工艺杯”的成熟文创方向，把脸谱色块用于杯身与礼盒包装，适合会议礼品和景区零售。</p>
-                    <button class="btn add-favorite" data-name="社火脸谱工艺杯">加入收藏</button>
+                <div class="form-group">
+                    <label for="product-image">图片路径</label>
+                    <input id="product-image" name="image" type="text" placeholder="例如：images/文创-冰箱贴.png">
                 </div>
-            </article>
+                <div class="form-group wide">
+                    <label for="product-description">产品介绍</label>
+                    <input id="product-description" name="description" type="text" placeholder="写一句适合展示的介绍文案" required>
+                </div>
+                <button class="btn primary" type="submit">发布产品</button>
+            </form>
         </section>
 
         <section class="roadmap">
             <div>
                 <p class="eyebrow">开发计划</p>
-                <h2>从展示到销售</h2>
+                <h2>从展示到运营</h2>
             </div>
             <ol>
-                <li><strong>基础款上架：</strong>帆布袋、冰箱贴、饮品、糕点礼盒完成产品卡片与收藏功能。</li>
-                <li><strong>联名扩展：</strong>结合马勺脸谱、皮影、刺绣布艺等陕西民间工艺开发礼赠系列。</li>
-                <li><strong>数字体验：</strong>增加 AR 试戴脸谱、线上展厅和活动预约表单。</li>
+                <li><strong>动态产品：</strong>产品从数据库读取，新增后立即显示。</li>
+                <li><strong>用户收藏：</strong>登录后收藏写入后端，换浏览器也可以查到账号收藏。</li>
+                <li><strong>下一步：</strong>可继续做管理员后台、图片上传、订单预约和云端数据库部署。</li>
             </ol>
         </section>
     </main>
